@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="icon.png" />
+	<link rel="stylesheet" href="w3.css" />
+	<link rel="stylesheet" href="mycss.css" />
+	<title>Transfo Kapp</title>
+
+</head>
+
+<body class="w3-pale-blue">
+	<!--  -->
+	<div class="w3-container w3-center my-title">
+		<h1>Transformateur Monophasé et Modèle de Kapp</h1>
+	</div>
+
+	<!-- main content -->
+	<main class="my-fond">
+		<section class="w3-row">
+			<!-- Parametres Kapp  -->
+			<article class="w3-third w3-container">
+				<div class="w3-card-4 w3-white">
+					<header class="w3-container w3-center my-header">
+						<h1>Paramètres</h1>
+					</header>
+					<div class="w3-container">
+						<form id="my-parameters-form">
+							<label for="rapport_m">Rapport m:</label>
+							<input class="w3-input w3-border w3-round" name="rapport_m" id="rapport_m" type="text"
+								value="1.05" required autocomplete="off" />
+
+							<label for="resistance_rp">Résistance Rp:</label>
+							<input class="w3-input w3-border w3-round" name="resistance_rp" id="resistance_rp"
+								type="text" value="900" required autocomplete="off" />
+
+							<label for="inductance_lp">Inductance Lp:</label>
+							<input class="w3-input w3-border w3-round" name="inductance_lp" id="inductance_lp"
+								type="text" value="1.2" required autocomplete="off" />
+
+							<label for="resistance_rs">Résistance Rs:</label>
+							<input class="w3-input w3-border w3-round" name="resistance_rs" id="resistance_rs"
+								type="text" value="0.5" required autocomplete="off" />
+
+							<label for="reactance_xs">Réactance Xs:</label>
+							<input class="w3-input w3-border w3-round" name="reactance_xs" id="reactance_xs" type="text"
+								value="0.5" required autocomplete="off" />
+							<div class="w3-center">
+								<input class="w3-button w3-white w3-border w3-border-red w3-round-large w3-margin
+									w3-hover-black my-button" type="submit" value="Validation">
+							</div>
+						</form>
+					</div>
+				</div>
+			</article>
+
+			<!-- Reglages -->
+			<article class="w3-third w3-container">
+				<div class="w3-card-4 w3-white">
+
+					<header class="w3-container w3-center my-header">
+						<h1>Réglages</h1>
+					</header>
+
+					<div class="w3-container">
+						<div class="w3-padding">
+							<!-- valeur U1eff -->
+							<label for="">Tension U1eff:</label>
+							<div class="w3-row-padding">
+								<div class="w3-threequarter">
+									<input type="range" id="u1eff" name="u1eff" step="10" min="0" max="230" value="0" />
+								</div>
+								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
+									<label><span id="theU1eff">0 V</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="w3-padding">
+							<!-- valeur charge -->
+							<label for="">Module Charge:</label>
+							<div class="w3-row-padding">
+								<div class="w3-threequarter">
+									<input type="range" id="charge" name="charge" step="5" min="20" max="500"
+										value="500" />
+								</div>
+								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
+									<label><span id="theCharge">500 &Omega;</span> </label>
+								</div>
+							</div>
+						</div>
+
+						<div class="w3-padding">
+							<!-- valeur phi -->
+							<label for="">Phase Charge:</label>
+							<div class="w3-row-padding">
+								<div class="w3-threequarter">
+									<input type="range" id="phi2" name="phi2" step="10" min="-90" max="90" value="0" />
+								</div>
+								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
+									<label><span id="thePhi">0 deg</span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- panel pour afficher erreurs -->
+				<div class="w3-card-4">
+					<div class="w3-panel w3-border w3-border-red w3-white">
+						<h3>Warning</h3>
+						<p><span id="warning-text-id"></span></p>
+						<p><button id="btn-warning-id"
+								class="w3-button w3-white w3-border w3-border-red w3-round w3-hover-black">Clear</button>
+						</p>
+					</div>
+				</div>
+
+			</article>
+			<!-- Mesures -->
+			<article class="w3-third w3-container">
+				<div class="w3-card-4 w3-white">
+
+					<header class="w3-container w3-center my-header">
+						<h1>Mesures</h1>
+					</header>
+
+					<div class="w3-container">
+						<div class="w3-grid" style="grid-template-columns:repeat(2,1fr);gap:10px">
+							<!-- Value U1eff -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom w3-margin-top">
+									<div>
+										<label>U1eff (V)</label>
+										<p class="panel-value"><span id="mesures-value-u1eff">0</span></p>
+									</div>
+								</div>
+							</div>
+							<!-- Value U2eff -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom w3-margin-top">
+									<div>
+										<label>U2eff (V)</label>
+										<p class="panel-value"><span id="mesures-value-u2eff">0</span></p>
+									</div>
+								</div>
+							</div>
+							<!-- Value I1eff -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom">
+									<div>
+										<label>I1eff (A)</label>
+										<p class="panel-value"><span id="mesures-value-i1eff">0</span></p>
+									</div>
+								</div>
+							</div>
+							<!-- Value I2eff -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom">
+									<div>
+										<label>I2eff (A)</label>
+										<p class="panel-value"><span id="mesures-value-i2eff">0</span></p>
+									</div>
+								</div>
+							</div>
+							<!-- Value P1 -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom">
+									<div>
+										<label>P1 (W)</label>
+										<p class="panel-value"><span id="mesures-value-p1">0</span></p>
+									</div>
+								</div>
+							</div>
+							<!-- Value P2 -->
+							<div class="w3-container">
+								<div class="w3-border w3-round-xlarge w3-center w3-margin-bottom">
+									<div>
+										<label>P2 (W)</label>
+										<p class="panel-value"><span id="mesures-value-p2">0</span></p>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+				</div>
+			</article>
+		</section>
+
+	</main>
+	<!-- end main content -->
+	<!--  -->
+	<footer class="w3-container">
+		<p><i>&copy; A.DeCarvalho</i></p>
+	</footer>
+	<!---->
+	<script src="script.js"></script>
+</body>
+
+</html>
