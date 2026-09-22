@@ -20,6 +20,7 @@
 
 	<!-- main content -->
 	<main class="my-fond">
+
 		<section class="w3-row">
 			<!-- Parametres Kapp  -->
 			<article class="w3-third w3-container">
@@ -48,7 +49,9 @@
 							<label for="reactance_xs">Réactance Xs:</label>
 							<input class="w3-input w3-border w3-round" name="reactance_xs" id="reactance_xs" type="text"
 								value="0.5" required autocomplete="off" />
+
 							<div class="w3-center">
+								<button class="w3-button w3-circle w3-black w3-margin" id="btn-help-kapp">?</button>
 								<input class="w3-button w3-white w3-border w3-border-red w3-round-large w3-margin
 									w3-hover-black my-button" type="submit" value="Validation">
 							</div>
@@ -56,7 +59,6 @@
 					</div>
 				</div>
 			</article>
-
 			<!-- Reglages -->
 			<article class="w3-third w3-container">
 				<div class="w3-card-4 w3-white">
@@ -71,7 +73,8 @@
 							<label for="">Tension U1eff:</label>
 							<div class="w3-row-padding">
 								<div class="w3-threequarter">
-									<input type="range" id="u1eff" name="u1eff" step="10" min="0" max="230" value="0" />
+									<input class="my-range" type="range" id="u1eff" name="u1eff" step="10" min="0"
+										max="230" value="0" />
 								</div>
 								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
 									<label><span id="theU1eff">0 V</span></label>
@@ -84,8 +87,8 @@
 							<label for="">Module Charge:</label>
 							<div class="w3-row-padding">
 								<div class="w3-threequarter">
-									<input type="range" id="charge" name="charge" step="5" min="20" max="500"
-										value="500" />
+									<input class="my-range" type="range" id="charge" name="charge" step="5" min="20"
+										max="500" value="500" />
 								</div>
 								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
 									<label><span id="theCharge">500 &Omega;</span> </label>
@@ -98,7 +101,8 @@
 							<label for="">Phase Charge:</label>
 							<div class="w3-row-padding">
 								<div class="w3-threequarter">
-									<input type="range" id="phi2" name="phi2" step="10" min="-90" max="90" value="0" />
+									<input class="my-range" type="range" id="phi2" name="phi2" step="10" min="-90"
+										max="90" value="0" />
 								</div>
 								<div class="w3-quarter w3-center w3-border w3-round-large w3-asphalt">
 									<label><span id="thePhi">0 deg</span></label>
@@ -184,21 +188,20 @@
 									</div>
 								</div>
 							</div>
-
-
+							<p><i>&copy; A.DeCarvalho</i></p>
 						</div>
 					</div>
 
 				</div>
 			</article>
 		</section>
-
+		<!-- image modele de kapp -->
+		<section class="w3-container w3-padding my-image-kapp" id="image-kapp">
+			<h3>Modèle de Kapp</h3>
+			<img src="kapp.svg" alt="Kapp modele" class="w3-image w3-border w3-border-black">
+		</section>
 	</main>
 	<!-- end main content -->
-	<!--  -->
-	<footer class="w3-container">
-		<p><i>&copy; A.DeCarvalho</i></p>
-	</footer>
 	<!---->
 	<script src="script.js"></script>
 </body>
