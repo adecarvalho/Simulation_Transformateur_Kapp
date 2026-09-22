@@ -20,6 +20,14 @@
   margin: 10px;
 }
 
+.my-range {
+  width: 100%;
+}
+
+.my-image-kapp {
+  visibility: hidden;
+}
+
 .panel-value {
   background-color: rgb(146, 175, 130);
   border: solid 1px;

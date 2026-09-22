@@ -25,6 +25,11 @@ class App {
 			p1: 0,
 			p2: 0
 		}
+		//help kapp
+		this.btnHelpKapp = document.getElementById('btn-help-kapp');
+		this.imageKapp = document.getElementById('image-kapp');
+		this.status = true;
+
 		//warning
 		this.warningText = document.getElementById('warning-text-id');
 
@@ -110,6 +115,17 @@ class App {
 	}
 	//
 	initEvents() {
+		//help image kapp
+		this.btnHelpKapp.addEventListener('click', () => {
+			this.status = !this.status;
+
+			if (this.status) {
+				this.imageKapp.style.visibility = "visible";
+			}
+			else {
+				this.imageKapp.style.visibility = "hidden";
+			}
+		});
 
 		//ranges
 		this.rangeU1eff.addEventListener('change', (event) => {
