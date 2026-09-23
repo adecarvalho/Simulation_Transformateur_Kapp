@@ -27,7 +27,6 @@ class App {
 		}
 		//help kapp
 		this.btnHelpKapp = document.getElementById('btn-help-kapp');
-		//this.imageKapp = document.getElementById('image-kapp');
 		this.myModale = document.getElementById('modale_id');
 
 		//warning
@@ -118,12 +117,6 @@ class App {
 		//help image kapp
 		this.btnHelpKapp.addEventListener('click', () => {
 			this.myModale.style.display = 'block';
-			//this.imageKapp.classList.remove('hidden');
-			//
-			// setTimeout(() => {
-			// 	this.imageKapp.classList.add('hidden');
-			// }, 3000);
-
 		});
 
 		//ranges
