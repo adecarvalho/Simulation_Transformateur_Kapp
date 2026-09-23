@@ -6,12 +6,16 @@
   font-display: swap;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .my-fond {
-  background-color: rgb(227, 254, 254);
+  background-color: #f0f2f5;
 }
 
 .my-header {
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(53, 58, 63);
   color: white;
 }
 
@@ -22,10 +26,6 @@
 
 .my-range {
   width: 100%;
-}
-
-.my-image-kapp {
-  visibility: hidden;
 }
 
 .panel-value {

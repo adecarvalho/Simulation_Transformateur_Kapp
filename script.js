@@ -27,8 +27,8 @@ class App {
 		}
 		//help kapp
 		this.btnHelpKapp = document.getElementById('btn-help-kapp');
-		this.imageKapp = document.getElementById('image-kapp');
-		this.status = true;
+		//this.imageKapp = document.getElementById('image-kapp');
+		this.myModale = document.getElementById('modale_id');
 
 		//warning
 		this.warningText = document.getElementById('warning-text-id');
@@ -117,14 +117,13 @@ class App {
 	initEvents() {
 		//help image kapp
 		this.btnHelpKapp.addEventListener('click', () => {
-			this.status = !this.status;
+			this.myModale.style.display = 'block';
+			//this.imageKapp.classList.remove('hidden');
+			//
+			// setTimeout(() => {
+			// 	this.imageKapp.classList.add('hidden');
+			// }, 3000);
 
-			if (this.status) {
-				this.imageKapp.style.visibility = "visible";
-			}
-			else {
-				this.imageKapp.style.visibility = "hidden";
-			}
 		});
 
 		//ranges

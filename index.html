@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="w3-pale-blue">
+<body class="my-fond">
 	<!--  -->
 	<div class="w3-container w3-center my-title">
 		<h1>Transformateur Monophasé et Modèle de Kapp</h1>
@@ -20,6 +20,25 @@
 
 	<!-- main content -->
 	<main class="my-fond">
+
+		<!-- modale image modele de kapp -->
+		<div id="modale_id" class="w3-modal">
+			<div class="w3-modal-content">
+
+				<header class="w3-container w3-asphalt w3-center">
+					<span onclick="document.getElementById('modale_id').style.display='none'"
+						class="w3-button w3-display-topright">&times;</span>
+					<h2>Modèle de Kapp</h2>
+				</header>
+
+				<div class="w3-container w3-center w3-card-4 w3-animate-zoom">
+					<img src="kapp.svg" alt="Kapp modele" class="w3-image">
+				</div>
+
+			</div>
+		</div>
+		<!-- fin modale image modele de kapp -->
+
 
 		<section class="w3-row">
 			<!-- Parametres Kapp  -->
@@ -188,20 +207,18 @@
 									</div>
 								</div>
 							</div>
-							<p><i>&copy; A.DeCarvalho</i></p>
+
 						</div>
 					</div>
 
 				</div>
 			</article>
 		</section>
-		<!-- image modele de kapp -->
-		<section class="w3-container w3-padding my-image-kapp" id="image-kapp">
-			<h3>Modèle de Kapp</h3>
-			<img src="kapp.svg" alt="Kapp modele" class="w3-image w3-border w3-border-black">
-		</section>
 	</main>
 	<!-- end main content -->
+	<footer>
+		<p><i>&copy; A.DeCarvalho</i></p>
+	</footer>
 	<!---->
 	<script src="script.js"></script>
 </body>
